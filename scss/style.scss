@@ -1,0 +1,49 @@
+/*----------------------------------------------------
+@File: Default Styles
+@Author: Droitthemes
+@URL: http://droitthemes.com/
+Author E-mail: 
+
+This file contains the styling for the actual template, this
+is the file you need to edit to change the look of the
+template.
+---------------------------------------------------- */
+/*=====================================================================
+@Template Name: 
+@Author:  Md. Shahadat Hussain
+@Developed By: Palash
+@Developer URL: http://droitthemes.com/
+Author E-mail: 
+
+@Default Styles
+
+Table of Content:
+01/ Variables
+02/ mixins
+03/ reset
+04/ button
+05/ header
+06/ banner part
+
+=====================================================================*/ 
+
+//variables css
+@import "base/variables";
+
+//mixins css
+@import "base/mixins";
+
+//button css
+@import "base/button";
+
+//grid css
+@import "base/grid";
+
+//reset css
+@import "base/reset";
+
+//swiper thumbnail slider css
+@import "swiper_thumbnail_slider";
+
+//image carousel slider css
+@import "image_carousel";
