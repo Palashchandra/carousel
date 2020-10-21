@@ -462,51 +462,60 @@
             var mself = sliderMain;
             var per = ($(mself[i]).attr("id"), $(mself[i]).data("perpage") || 1);
             var lop = $(mself[i]).data("loop");
-            var spd = $(mself[i]).data("speed") || 1000;
+            var spd = $(mself[i]).data("speed") || 3000;
             var sps = $(mself[i]).data("space") || 0;
+            // var sl = $(mself[i]).data("mainslideloop") || 7;
             var afc = $(mself[i]).data("effect");
             var maincents = $(mself[i]).data("main_centere");
             var dir = $(mself[i]).data("direction") || "horizontal";
             mainArray.push(
                 new Swiper(element, {
                     loop: lop,
-                    loopedSlides: 4,
-                    slidesPerView: per,     
+                    loopedSlides: 5,
+                    slidesPerView: per,
                     speed: spd,
                     effect: afc,
                     spaceBetween: sps,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: !1
+                    },
                     centeredSlides: maincents,
                     direction: dir,
                 })
             );
         });
-
         sliderNav.forEach(function (element, i) {
             var self = sliderNav;
             var navper = ($(self[i]).attr("id"), $(self[i]).data("nav_perpage") || 1);
             var navlop = $(self[i]).data("nav_loop");
-            var navspd = $(self[i]).data("nav_speed") || 1000;
+            var navspd = $(self[i]).data("nav_speed") || 2000;
             var navsps = $(self[i]).data("nav_space") || 0;
             var navafc = $(self[i]).data("nav_effect");
             var navcents = $(self[i]).data("nav_centere");
+            // var nsl = $(self[i]).data("navslideloop") || 7;
             var navdir = $(self[i]).data("nav_direction") || "horizontal";
-                navArray.push(
-                    new Swiper(element, {
-                        slidesPerView: navper,
-                        loop: navlop,
-                        loopedSlides: 4,
-                        slideToClickedSlide: true,
-                        spaceBetween: navsps,
-                        centeredSlides: navcents,
-                        direction: navdir,
-                        speed: navspd,
-                        effect: navafc,
-                        navigation: {
-                            nextEl: self[i].querySelector('.swiper-button-next'),
-                            prevEl: self[i].querySelector('.swiper-button-prev')
-                        }
-                    })
-                );
+            navArray.push(
+                new Swiper(element, {
+                    slidesPerView: navper,
+                    loop: navlop,
+                    loopedSlides: 5,
+                    slideToClickedSlide: true,
+                    spaceBetween: navsps,
+                    centeredSlides: navcents,
+                    direction: navdir,
+                    speed: navspd,
+                    effect: navafc,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: !1
+                    },
+                    navigation: {
+                        nextEl: self[i].querySelector('.dl_swiper_button_next'),
+                        prevEl: self[i].querySelector('.dl_swiper_button_prev')
+                    }
+                })
+            );
         });
         const checkOnPage = function () {
             if (sliderMain.length > 0 && sliderNav.length > 0) {
