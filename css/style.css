@@ -1894,6 +1894,13 @@ button:focus,
 .dl_thumb_slider_content_wrapper.swiper-slide-active .dl_thumb_slider_content_inner .dl_slider_desc {
   animation: fadeInLeft 0.8s both 1s;
 }
+.dl_thumb_slider_content_wrapper.dl_thumb_wrapper_style_02 .dl_thumb_slider_content_inner {
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 40%;
+}
 
 .dl_slider_inner_style_01 {
   position: relative;

@@ -472,7 +472,9 @@
                 new Swiper(element, {
                     loop: lop,
                     loopedSlides: 5,
+                    slidesPerGroup: 1,
                     slidesPerView: per,
+                    loopFillGroupWithBlank: true,
                     speed: spd,
                     effect: afc,
                     spaceBetween: sps,
@@ -482,6 +484,10 @@
                     },
                     centeredSlides: maincents,
                     direction: dir,
+                    navigation: {
+                        nextEl: mself[i].querySelector('.dl_main_swiper_button_next'),
+                        prevEl: mself[i].querySelector('.dl_main_swiper_button_prev')
+                    }
                 })
             );
         });
@@ -500,8 +506,10 @@
                     slidesPerView: navper,
                     loop: navlop,
                     loopedSlides: 5,
+                    slidesPerGroup: 1,
                     slideToClickedSlide: true,
                     spaceBetween: navsps,
+                    loopFillGroupWithBlank: true,
                     centeredSlides: navcents,
                     direction: navdir,
                     speed: navspd,
@@ -649,7 +657,7 @@
             }
         })
     })
-    $(".swiper-container").hover(function () {
+    $(".swiper-container, .dl_thumb_slider_wrapper ").hover(function () {
         (this).swiper.autoplay.stop();
     }, function () {
         (this).swiper.autoplay.start();
