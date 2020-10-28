@@ -28,6 +28,19 @@
         }
     });
 
+    //dl video popup js
+    var video_popup = $('.dl_video_popup');
+    if (video_popup.length > 0) {
+        video_popup.magnificPopup({
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: true,
+            fixedContentPos: false
+        });
+    }
+    
+
     //niceselent js
     var niceSelect = $('.niceSelect');
     if (niceSelect.length > 0) {
@@ -135,13 +148,10 @@
 
     var $w = $(window);
     $.fn.visible = function (partial, hidden, direction, container) {
-
         if (this.length < 1)
             return;
-
         // Set direction default to 'both'.
         direction = direction || 'both';
-
         var $t = this.length > 1 ? this.eq(0) : this,
             isContained = typeof container !== 'undefined' && container !== null,
             $c = isContained ? $(container) : $w,
@@ -458,6 +468,7 @@
         let sliderNav = document.querySelectorAll('.swiper-container.dl_thumb_slider_nav')
         let mainArray = [];
         let navArray = [];
+        
         sliderMain.forEach(function (element, i) {
             var mself = sliderMain;
             var per = ($(mself[i]).attr("id"), $(mself[i]).data("perpage") || 1);
@@ -471,17 +482,13 @@
             mainArray.push(
                 new Swiper(element, {
                     loop: lop,
-                    loopedSlides: 5,
+                    loopedSlides: 7,
                     slidesPerGroup: 1,
                     slidesPerView: per,
                     loopFillGroupWithBlank: true,
                     speed: spd,
                     effect: afc,
                     spaceBetween: sps,
-                    autoplay: {
-                        delay: 5000,
-                        disableOnInteraction: !1
-                    },
                     centeredSlides: maincents,
                     direction: dir,
                     navigation: {
@@ -495,7 +502,7 @@
             var self = sliderNav;
             var navper = ($(self[i]).attr("id"), $(self[i]).data("nav_perpage") || 1);
             var navlop = $(self[i]).data("nav_loop");
-            var navspd = $(self[i]).data("nav_speed") || 2000;
+            var navspd = $(self[i]).data("nav_speed") || 3000;
             var navsps = $(self[i]).data("nav_space") || 0;
             var navafc = $(self[i]).data("nav_effect");
             var navcents = $(self[i]).data("nav_centere");
@@ -505,7 +512,7 @@
                 new Swiper(element, {
                     slidesPerView: navper,
                     loop: navlop,
-                    loopedSlides: 5,
+                    loopedSlides: 7,
                     slidesPerGroup: 1,
                     slideToClickedSlide: true,
                     spaceBetween: navsps,
@@ -514,10 +521,6 @@
                     direction: navdir,
                     speed: navspd,
                     effect: navafc,
-                    autoplay: {
-                        delay: 5000,
-                        disableOnInteraction: !1
-                    },
                     navigation: {
                         nextEl: self[i].querySelector('.dl_swiper_button_next'),
                         prevEl: self[i].querySelector('.dl_swiper_button_prev')
@@ -537,8 +540,7 @@
         checkOnPage();
     }
     dlmultiSwiperSlides();
-
-
+    
     //swiper slider multi thumb slider
     // const dlmultiSwiperSlides = function () {
     //     let sliderMain = document.querySelectorAll('.swiper-container.dl_thumb_slider_main')
@@ -625,6 +627,7 @@
             cfr = $(this).data("rotate"),
             cfs = $(this).data("stretch"),
             cfd = $(this).data("depth"),
+            lops = $(this).data("loopslides"),
             scol = $(this).data("slidescolumn"),
             r = $(this).data("breakpoints");
         new Swiper(t, {
@@ -638,6 +641,7 @@
             centeredSlides: c,
             mousewheel: mous,
             slidesPerColumn: scol,
+            loopedSlides: lops,
             autoplay: pl,
             coverflowEffect: {
                 rotate: cfr,
@@ -657,12 +661,10 @@
             }
         })
     })
-    $(".swiper-container, .dl_thumb_slider_wrapper ").hover(function () {
-        (this).swiper.autoplay.stop();
-    }, function () {
-        (this).swiper.autoplay.start();
-    });
-
-
+    // $(".swiper-container, .dl_thumb_slider_wrapper ").hover(function () {
+    //     (this).swiper.autoplay.stop();
+    // }, function () {
+    //     (this).swiper.autoplay.start();
+    // });
 
 }(jQuery));

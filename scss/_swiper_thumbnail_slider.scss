@@ -253,6 +253,30 @@
             margin: 0 auto;
         }
     }
+    &.dl_thumb_slider_style_06 {
+        .dl_thumb_slider_nav {
+            position: absolute;
+            left: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            max-height: 517px;
+        }
+        .swiper-slide-active .dl_swiper_thumb_inner {
+            background-color: transparent;
+        }
+        .dl_swiper_thumb_inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            img{
+                max-width: 105px;
+            }
+        }
+    }
+    .dl_video_popup{
+        display: inline-block;
+    }
 }
 
 //thumb slider content wrapper style
@@ -309,6 +333,19 @@
             right: 0;
             margin: 0 auto;
             top: 40%;
+        }
+    }
+    &.dl_thumb_wrapper_style_03{
+        .dl_thumb_slider_content_inner{
+            text-align: center;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 50%;
+            transform: translateY(-50%);
+            .play_icon{
+                max-width: 100px
+            }
         }
     }
 }

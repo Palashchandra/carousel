@@ -42,6 +42,10 @@
 	font-style: italic;
 }
 
+article, aside, div, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+  
 body {
     font-family: $ft_font;
     padding: 0;
@@ -568,7 +572,9 @@ button:focus,
         padding-bottom: 50px;
     }
 }
-
+.dl_pb_150{
+    padding-bottom: 150px;
+}
 //padding right reset
 .dl_pr_5{
     padding-right: 5px;
@@ -812,32 +818,32 @@ button:focus,
 }
 
 
-:root {
-    --progress: 0;
-    --track: #ccc;
-    --thumb: #000;
-    --height: 50vh;
-    --radius: 5;
-    --width: 10;
-  }
-  .progress {
-    background-color: var(--track);
-    border-radius: calc(1px * var(--radius));
-    height: var(--height);
-    overflow: hidden;
-    padding: calc(1px * var(--inset));
-    width: calc(1px * var(--width));
-  }
-  .bar {
-    background-color: var(--thumb);
-    height: 100%;
-    transform-origin: 0 0;
-    transform: scaleY(var(--progress));
-    width: 100%;
-  }
-  .dl_container_width{
-      max-width: 1200px;
-      margin: 0 auto;
-  }
+// :root {
+//     --progress: 0;
+//     --track: #ccc;
+//     --thumb: #000;
+//     --height: 50vh;
+//     --radius: 5;
+//     --width: 10;
+//   }
+//   .progress {
+//     background-color: var(--track);
+//     border-radius: calc(1px * var(--radius));
+//     height: var(--height);
+//     overflow: hidden;
+//     padding: calc(1px * var(--inset));
+//     width: calc(1px * var(--width));
+//   }
+//   .bar {
+//     background-color: var(--thumb);
+//     height: 100%;
+//     transform-origin: 0 0;
+//     transform: scaleY(var(--progress));
+//     width: 100%;
+//   }
+//   .dl_container_width{
+//       max-width: 1200px;
+//       margin: 0 auto;
+//   }
   
 /**************** common css end ****************/
