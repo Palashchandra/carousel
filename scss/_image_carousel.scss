@@ -3,6 +3,7 @@
         position: relative;
         z-index: 1;
         display: inline-grid;
+        width: 100%;
         .dl_slider_thumb_wrapper{
             width: 100%;
             display: inline-flex;
@@ -18,14 +19,14 @@
             width: 100%;
         }
         .dl_slide_title{
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 500;
             color: #FFFFFF;
             margin-bottom: 4px;
         }
         .dl_tab{
             color: #F4F2F2;
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 500;
             display: inline-block;
         }
@@ -93,15 +94,15 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        left: 25px;
+        left: 0;
         top: 50%;
-        transform: translateX(-50%);
+        transform: translateY(-50%);
         z-index: 2;
         cursor: pointer;
     }
     .dl_swiper_button_next{
         left: auto;
-        right: -25px;
+        right: 0;
     }
 }
 .dl_image_carousel_controler_style_02{
@@ -115,9 +116,9 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        left: -65px;
+        left: -90px;
         top: 50%;
-        transform: translateX(-50%);
+        transform: translateY(-50%);
         z-index: 2;
         cursor: pointer;
         @include transform_time(.3s);
@@ -127,6 +128,6 @@
     }
     .dl_swiper_button_next{
         left: auto;
-        right: -115px;
+        right: -90px;
     }
 }
