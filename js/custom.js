@@ -45,14 +45,14 @@
             "background-color": (bg_color)
         })
     })
-    
+
     //swiper slider multi thumb slider option
     const dlmultiSwiperSlides = function () {
         let sliderMain = document.querySelectorAll('.swiper-container.dl_thumb_slider_main')
         let sliderNav = document.querySelectorAll('.swiper-container.dl_thumb_slider_nav')
         let mainArray = [];
         let navArray = [];
-        
+
         sliderMain.forEach(function (element, i) {
             var mself = sliderMain;
             var per = ($(mself[i]).attr("id"), $(mself[i]).data("perpage") || 1);
@@ -80,11 +80,8 @@
                     autoplay: atp,
                     centeredSlides: maincents,
                     breakpoints: main_br,
+                    slideToClickedSlide: true,
                     direction: dir,
-                    // navigation: {
-                    //     nextEl: mself[i].querySelector(main_nx),
-                    //     prevEl: mself[i].querySelector(main_pv)
-                    // }
                     navigation: {
                         nextEl: main_nx,
                         prevEl: main_pv
@@ -121,10 +118,6 @@
                     speed: navspd,
                     effect: navafc,
                     breakpoints: nav_br,
-                    // navigation: {
-                    //     nextEl: self[i].querySelector(nav_nx),
-                    //     prevEl: self[i].querySelector(nav_pv)
-                    // }
                     navigation: {
                         nextEl: nav_nx,
                         prevEl: nav_pv
@@ -144,7 +137,7 @@
         checkOnPage();
     }
     dlmultiSwiperSlides();
-    
+
     //swiper slider option
     $(".dl_slider_wrapper").each(function () {
         var t = $(this),
@@ -178,6 +171,7 @@
             centeredSlides: c,
             mousewheel: mous,
             slidesPerColumn: scol,
+            slideToClickedSlide: true,
             loopedSlides: lops,
             autoplay: pl,
             coverflowEffect: {
@@ -203,5 +197,194 @@
     // }, function () {
     //     (this).swiper.autoplay.start();
     // });
+
+    //tab slider
+    var dl_galleryThumbs1 = new Swiper('.dl_gallery_slider_nav_tab_01', {
+        spaceBetween: 30,
+        slidesPerView: 7,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        loop: false,
+        speed: 1000,
+        breakpoints: {
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            480: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            768: {
+              slidesPerView: 5,
+              spaceBetween: 30
+            },
+            1024: {
+              slidesPerView: 6,
+            },
+            1366: {
+              slidesPerView: 7,
+            }
+        }
+    });
+    var dl_galleryTop1 = new Swiper('.dl_gallery_slider_tab_01', {
+        loop: false,
+        effect: 'fade',
+        speed: 1000,
+        thumbs: {
+            swiper: dl_galleryThumbs1
+        }
+    });
+
+    var dl_galleryThumbs2 = new Swiper('.dl_gallery_slider_nav_tab_02', {
+        spaceBetween: 30,
+        slidesPerView: 7,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        loop: false,
+        speed: 1000,
+        breakpoints: {
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            480: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            768: {
+              slidesPerView: 5,
+              spaceBetween: 30
+            },
+            1024: {
+              slidesPerView: 6,
+            },
+            1366: {
+              slidesPerView: 7,
+            }
+        }
+    });
+    var dl_galleryTop2 = new Swiper('.dl_gallery_slider_tab_02', {
+        loop: false,
+        effect: 'fade',
+        speed: 1000,
+        thumbs: {
+            swiper: dl_galleryThumbs2
+        }
+    });
+
+    var dl_galleryThumbs3 = new Swiper('.dl_gallery_slider_nav_tab_03', {
+        spaceBetween: 30,
+        slidesPerView: 7,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        loop: false,
+        speed: 1000,
+        breakpoints: {
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            480: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            768: {
+              slidesPerView: 5,
+              spaceBetween: 30
+            },
+            1024: {
+              slidesPerView: 6,
+            },
+            1366: {
+              slidesPerView: 7,
+            }
+        }
+    });
+    var dl_galleryTop3 = new Swiper('.dl_gallery_slider_tab_03', {
+        loop: false,
+        effect: 'fade',
+        speed: 1000,
+        thumbs: {
+            swiper: dl_galleryThumbs3
+        }
+    });
+
+    var dl_galleryThumbs4 = new Swiper('.dl_gallery_slider_nav_tab_04', {
+        spaceBetween: 30,
+        slidesPerView: 7,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        loop: false,
+        speed: 1000,
+        breakpoints: {
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            480: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            768: {
+              slidesPerView: 5,
+              spaceBetween: 30
+            },
+            1024: {
+              slidesPerView: 6,
+            },
+            1366: {
+              slidesPerView: 7,
+            }
+        }
+    });
+    var dl_galleryTop4 = new Swiper('.dl_gallery_slider_tab_04', {
+        loop: false,
+        effect: 'fade',
+        speed: 1000,
+        thumbs: {
+            swiper: dl_galleryThumbs4
+        }
+    });
+
+    var dl_galleryThumbs5 = new Swiper('.dl_gallery_slider_nav_tab_05', {
+        slidesPerView: 7,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        loop: false,
+        speed: 1000,
+        direction: 'vertical',
+        breakpoints: {
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            480: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            768: {
+              slidesPerView: 5,
+              spaceBetween: 30
+            },
+            1024: {
+              slidesPerView: 6,
+            },
+            1366: {
+              slidesPerView: 7,
+            }
+        }
+    });
+    var dl_galleryTop5 = new Swiper('.dl_gallery_slider_tab_05', {
+        loop: false,
+        effect: 'fade',
+        speed: 1000,
+        thumbs: {
+            swiper: dl_galleryThumbs5
+        }
+    });
+
+    
+
 
 }(jQuery));

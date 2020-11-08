@@ -1,0 +1,196 @@
+//thumb slider content wrapper style
+.dl_swiper_gallery_slider_content {
+    position: relative;
+    z-index: 3;
+    display: inline-flex;
+    &.dl_slider_overlay{
+        position: relative;
+        &:after{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: .3);
+            z-index: 2;
+        }
+    }
+    .dl_slider_thumb{
+        width: 100%;
+        display: inline-flex;
+    }
+    .dl_tab_slider_img{
+        width: 100%;
+    }
+    .dl_thumb_slider_content_inner {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 100px 134px;
+        z-index: 3;
+        @media #{$tab}{
+            padding: 20px;
+        }
+        .dl_slider_title {
+            font-weight: 500;
+            font-size: 45px;
+            line-height: 60px;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+
+            @media #{$tab}{
+                font-size: 30px;
+                line-height: 38px;
+            }
+        }
+        .dl_slider_desc {
+            font-size: 19px;
+            line-height: 32px;
+            color: #FFFFFF;
+            font-weight: 400;
+            @media #{$tab}{
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+    }
+    &.swiper-slide-active {
+        .dl_thumb_slider_content_inner {
+            .dl_slider_title {
+                animation: fadeInLeft .6s both .8s;
+            }
+            .dl_slider_desc {
+                animation: fadeInLeft .8s both 1s;
+            }
+        }
+    }
+    &.dl_thumb_wrapper_style_02{
+        .dl_thumb_slider_content_inner{
+            text-align: center;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 40%;
+        }
+    }
+    &.dl_thumb_wrapper_style_03{
+        .dl_thumb_slider_content_inner{
+            text-align: center;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 50%;
+            transform: translateY(-50%);
+            .play_icon{
+                max-width: 90px
+            }
+        }
+    }
+}
+.dl_thumb_slider_tab_style_02{
+    .dl_swiper_gallery_thumb{
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        padding: 0 50px;
+        width: 100%;
+    }
+    .swiper-slide{
+        display: inline-flex;
+    }
+}
+
+.dl_swiper_gallery_thumb{
+    margin-top: 30px;
+    .dl_swiper_thumb_inner{
+        display: inline-flex;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+}
+.dl_thumb_slider_vartical_tab_style{
+    .dl_swiper_gallery_thumb{
+        margin-top: 0;
+        max-height: 500px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 50px;
+        @media #{$mobile}{
+            display: none;
+        }
+        @media #{$tab_device}{
+            height: 350px;
+        }
+        .dl_swiper_thumb_inner{
+            display: inline-flex;
+            width: 80px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+[class^="dl_gallery_slider_nav_tab_"], [class*="dl_gallery_slider_nav_tab_"] {
+    .dl_swiper_thumb_inner{
+        position: relative;
+        z-index: 1;
+        border-radius: 6px;
+        cursor: pointer;
+        img{
+            border-radius: 6px;
+        }
+        &:after{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            background-color: #584e4e;
+            opacity: 0.8;
+            @include transform_time(.3s);
+        }
+        &:before{
+            position: absolute;
+            content: "";
+            left: auto;
+            right: 0;
+            bottom: 0;
+            height: 4px;
+            width: 0;
+            background-color: $base_color;
+            border-radius: 0 0 6px 6px;
+            -webkit-transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+            transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+        }
+        &:hover{
+            &:after{
+                opacity: 0;
+            }
+            &:before{
+                width: 100%;
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+    .swiper-slide-thumb-active{
+        .dl_swiper_thumb_inner{
+            &:after{
+                opacity: 0;
+            }
+            &:before{
+                width: 100%;
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+}
